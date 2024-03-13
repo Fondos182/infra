@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: echobot
-  namespace: gitops-series
+  name: app-test
+  namespace: test-namespace
   labels:
-    app: echobot
+    app: app-test
 spec:
   containers:
     - name: message
       image: 'ghcr.io/sngular/gitops-echobot:v0.1.0'
       env:
         - name: CHARACTER
-          value: sngular utiliza gitops en sus entornos
+          value: log de prueba
       resources:
         requests:
           cpu: 10m
