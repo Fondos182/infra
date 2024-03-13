@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: app1
-  namespace: test-namespace
+  name: echobot
+  namespace: gitops-series
 spec:
   interval: 1m0s
   url: https://github.com/sngular/gitops-echobot.git
@@ -17,13 +17,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
-  name: app1
-  namespace: test-namespace
+  name: echobot
+  namespace: gitops-series
 spec:
   interval: 10m0s
   path: ./deploy
   prune: true
   sourceRef:
     kind: GitRepository
-    name: app1
+    name: echobot
   validation: client
