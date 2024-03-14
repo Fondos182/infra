@@ -22,7 +22,7 @@ spec:
           image: ghcr.io/sngular/gitops-echobot:v0.2.2
           env:
             - name: CHARACTER
-              value: "Ahora tenemos 3 réplicas!. Tag v0.1.3 desplegado!"
+              value: "test log"
             - name: SLEEP
               value: "3s"
           resources:

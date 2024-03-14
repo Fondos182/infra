@@ -5,14 +5,14 @@ metadata:
   namespace: test-namespace
 spec:
   interval: 1m0s
-  url: https://github.com/sngular/gitops-echobot.git
+  url: https://github.com/Fondos182/infra/tree/main/clusters/demo
   ref:
     tag: v0.2.2
   ignore: |
     # exclude all
     /*
     # include deploy dir
-    !/deploy
+    !/deployments
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
@@ -21,7 +21,7 @@ metadata:
   namespace: test-namespace
 spec:
   interval: 10m0s
-  path: ./deploy
+  path: ./deployments
   prune: true
   sourceRef:
     kind: GitRepository
